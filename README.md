@@ -30,6 +30,7 @@ Standard Forms 706, 707, 708, and 710 have white text; 709, and 712 have black t
 These values are defined in the script and can be called with their sample functions:
 ```sh
 u_banner
+fouo_banner
 c_banner
 s_banner
 ts_banner
@@ -38,14 +39,18 @@ class_banner
 ```
 
 # Additional Work
-This currently only works with `PuTTY` and some extra work needs to be done to get it working in `gnome-terminal`.  I'd also like to make this modular enough that it can support different terminal emulators easily.
+This currently only works with `PuTTY` and `gnome-terminal`.  I'd also like to make this modular enough that it can support different terminal emulators easily.
+
+Need to trap WINCH and redraw banner on screen resize.
+
+# Known Bugs
+Clearing the screen (via `Ctrl+L` or `clear`) results in the prompt appearing on the same line as the banner.  Is there a way to trap these calls and bump the prompt down a line?
 
 # Licensing
 This software is licensed under the MIT License (SPDX: MIT).  See [the LICENSE file](LICENSE) for the full text of the license.  A copy of the license text can also be found at [the SPDX page](https://spdx.org/licenses/MIT.html) or the [OSI page](https://opensource.org/licenses/MIT).
 
 # Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/cawaltrip/terminal-banner/issues)
-Feel free to make pull requests!
-
+Feel free to make pull requests!  I can always use the help!
 
 # Acknowledgements
 I decided to make this after looking at the [classification banner](https://github.com/fcaviggia/classification-banner) made by @fcaviggia.
